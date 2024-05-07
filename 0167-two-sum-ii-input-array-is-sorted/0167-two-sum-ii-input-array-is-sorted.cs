@@ -12,7 +12,6 @@ public class Solution {
             if (!dic.ContainsKey(numbers[i]))
                 dic.Add(numbers[i], i);                        
         }
-
         throw new ArgumentException("Not found.");
     }
 }
