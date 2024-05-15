@@ -3,7 +3,7 @@ public class Solution {
         int[] seen = new int[nums.Length];
         List<int> ans = new List<int>();
         int aux;
-        int lastNumber = 0, seenCount = 0, k = 0;
+        int lastNumber = 0, seenCount = 0, k = 0;    
 
         for (int i = 0; i < nums.Length; i++)
         {
@@ -24,7 +24,7 @@ public class Solution {
                     k++;
                 else
                     k = 1;
-                
+               
                 if (k > seenCount)
                     ans.Add(-1);
                 else
