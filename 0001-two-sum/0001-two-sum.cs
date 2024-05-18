@@ -1,15 +1,18 @@
 public class Solution {
     public int[] TwoSum(int[] nums, int target) {    
-        for (var i = 0; i < nums.Length -1; i++)
+        Dictionary<int, int> number = new Dictionary<int, int>();                                            
+        for (var i = 0; i < nums.Length; i++)
         {
-            for (var j = 1; j < nums.Length; j++)
-            {
-                if ((nums[i] + nums[j] == target) && (i != j))
-                    return new int[]{i, j};
-            }
+            int difference = target - nums[i];
+            
+            if ((number.ContainsKey(difference)) && 
+                (number[difference] != i))
+                return new int[]{number[difference], i};
+            else if (!number.ContainsKey(nums[i]))             
+                number.Add(nums[i], i);
         }
-        return new int[]{0};
-        //throw new ArgumentException("Not found.");
+        
+        return new int[]{1};        
     }
 } 
 //9+8+7+6+5+4+3+2+1
