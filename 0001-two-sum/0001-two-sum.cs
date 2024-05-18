@@ -1,18 +1,16 @@
 public class Solution {
-    public int[] TwoSum(int[] nums, int target) {
-        Dictionary<int, int> dic = new Dictionary<int, int>();
-
-        for(int i = 0; i < nums.Length; i++)
+    public int[] TwoSum(int[] nums, int target) {    
+        for (var i = 0; i < nums.Length -1; i++)
         {
-            int complement = target - nums[i];
-
-            if (dic.ContainsKey(complement))
-                return new int[]{ dic[complement], i};
-            
-            if (!dic.ContainsKey(nums[i]))
-                dic.Add(nums[i], i);                        
+            for (var j = 0; j < nums.Length; j++)
+            {
+                if ((nums[i] + nums[j] == target) && (i != j))
+                    return new int[]{i, j};
+            }
         }
-
-        throw new ArgumentException("Not found.");
+        return new int[]{0};
+        //throw new ArgumentException("Not found.");
     }
-}
+} 
+//9+8+7+6+5+4+3+2+1
+//Sum = (First Element + Last Element) * n / 2
