@@ -9,7 +9,7 @@ public class Solution {
         {
             if (number[i] != number[j])
                 return false;
-        }        
+        }       
         return true;        
     }
 }
